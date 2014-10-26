@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		90F93DE219FD1DAF0028DCF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */; };
-		90F93DE419FD1DAF0028DCF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE319FD1DAF0028DCF4 /* ViewController.swift */; };
+		90F93DE419FD1DAF0028DCF4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */; };
 		90F93DE719FD1DAF0028DCF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DE519FD1DAF0028DCF4 /* Main.storyboard */; };
 		90F93DE919FD1DAF0028DCF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DE819FD1DAF0028DCF4 /* Images.xcassets */; };
 		90F93DEC19FD1DAF0028DCF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DEA19FD1DAF0028DCF4 /* LaunchScreen.xib */; };
 		90F93DF819FD1DAF0028DCF4 /* FreeboxClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DF719FD1DAF0028DCF4 /* FreeboxClientTests.swift */; };
+		90F93E0219FD1DE30028DCF4 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93E0119FD1DE30028DCF4 /* APIController.swift */; };
+		90F93E0419FD4D310028DCF4 /* Freebox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93E0319FD4D310028DCF4 /* Freebox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +31,15 @@
 		90F93DDC19FD1DAE0028DCF4 /* FreeboxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeboxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F93DE019FD1DAF0028DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90F93DE319FD1DAF0028DCF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		90F93DE619FD1DAF0028DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90F93DE819FD1DAF0028DCF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		90F93DEB19FD1DAF0028DCF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		90F93DF119FD1DAF0028DCF4 /* FreeboxClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeboxClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F93DF619FD1DAF0028DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F93DF719FD1DAF0028DCF4 /* FreeboxClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeboxClientTests.swift; sourceTree = "<group>"; };
+		90F93E0119FD1DE30028DCF4 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		90F93E0319FD4D310028DCF4 /* Freebox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Freebox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */,
-				90F93DE319FD1DAF0028DCF4 /* ViewController.swift */,
+				90F93E0119FD1DE30028DCF4 /* APIController.swift */,
+				90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */,
+				90F93E0319FD4D310028DCF4 /* Freebox.swift */,
 				90F93DE519FD1DAF0028DCF4 /* Main.storyboard */,
 				90F93DE819FD1DAF0028DCF4 /* Images.xcassets */,
 				90F93DEA19FD1DAF0028DCF4 /* LaunchScreen.xib */,
@@ -212,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90F93DE419FD1DAF0028DCF4 /* ViewController.swift in Sources */,
+				90F93DE419FD1DAF0028DCF4 /* WelcomeViewController.swift in Sources */,
 				90F93DE219FD1DAF0028DCF4 /* AppDelegate.swift in Sources */,
+				90F93E0219FD1DE30028DCF4 /* APIController.swift in Sources */,
+				90F93E0419FD4D310028DCF4 /* Freebox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
