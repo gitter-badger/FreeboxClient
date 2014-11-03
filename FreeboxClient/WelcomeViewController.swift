@@ -8,24 +8,31 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,APIControllerProtocol {
+class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,APILoginControllerProtocol {
     
-    var api: APIController!
+    @IBOutlet weak var freeboxesTableView: UITableView!
+    
+    var api: APILoginController!
     var freeboxes = [Freebox]()
+    
     var hasPermission = false
+    var currentFreebox: Int?
+    var sessionToken: String?
+    
+    var overlayView: UIView?
+    var activityIndicator: UIActivityIndicatorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        api = APIController(delegate: self)
+        api = APILoginController(delegate: self)
         
         var defaults = NSUserDefaults.standardUserDefaults()
 
 //        var appDomain = NSBundle.mainBundle().bundleIdentifier
 //        defaults.removePersistentDomainForName(appDomain!)
-//        
+
         if let tmpFreebox = defaults.arrayForKey("freeboxes") as? Array<Dictionary<String,String>> {
             freeboxes = Freebox.FreeboxWithArray(tmpFreebox)
-            println(freeboxes)
         }
         else {
             api.authorize()
@@ -43,9 +50,29 @@ class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FreeboxIdentifier") as UITableViewCell
-        cell.textLabel.text = freeboxes[indexPath.row].name
-        cell.detailTextLabel?.text = freeboxes[indexPath.row].app_token
+        let f = freeboxes[indexPath.row]
+        cell.textLabel.text = f.name
+        if let rip = f.remote_ip {
+            if let rport = f.remote_port {
+                cell.detailTextLabel?.text = rip + ":" + rport
+            }
+        }
+        else {
+            cell.detailTextLabel?.text = ""
+        }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentFreebox = indexPath.row
+        self.overlayView = UIView(frame: UIScreen.mainScreen().bounds)
+        self.overlayView!.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        self.activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+        self.activityIndicator!.center = self.overlayView!.center
+        self.overlayView!.addSubview(self.activityIndicator!)
+        self.activityIndicator!.startAnimating()
+        UIApplication.sharedApplication().keyWindow?.addSubview(self.overlayView!)
+        api.login()
     }
     
     func didReceiveAPIResults(jsonResults: NSDictionary, id_cmd: Int) {
@@ -65,6 +92,29 @@ class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewD
                 if results["status"] as String == "granted" {
                     hasPermission = true
                 }
+            }
+        case 3:
+            if jsonResults["success"] as Bool == true {
+                let results = jsonResults["result"] as NSDictionary
+                let challenge = results["challenge"] as? String
+                var token: String?
+                if let tmp = currentFreebox {
+                    if tmp == -1 {
+                        token = freeboxes.last!.app_token
+                    }
+                    else {
+                        token = freeboxes[tmp].app_token
+                    }
+                }
+                let password = challenge?.digest(.SHA1, key: token!)
+                api.session(password!)
+            }
+        case 4:
+            self.overlayView?.removeFromSuperview()
+            if jsonResults["success"] as Bool == true {
+                let results = jsonResults["result"] as NSDictionary
+                self.sessionToken = results["session_token"] as String?
+                performSegueWithIdentifier("toDownloadView", sender: self)
             }
         default:
             println("command unknown")
@@ -104,6 +154,7 @@ class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewD
                     defaults.setObject(dictFreebox, forKey: "freeboxes")
                     
                     self.freeboxes += [freebox]
+                    self.currentFreebox = -1
                     self.api.login()
                 }))
                 
@@ -112,6 +163,12 @@ class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewD
         }))
         
         self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var downloadVC = segue.destinationViewController as DownloadViewController
+        downloadVC.free = freeboxes[currentFreebox!]
+        downloadVC.sessionToken = self.sessionToken!
     }
 
 }

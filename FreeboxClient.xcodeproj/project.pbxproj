@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9020653A1A08093600A2A226 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902065391A08093600A2A226 /* Download.swift */; };
+		9020653C1A080A6800A2A226 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9020653B1A080A6800A2A226 /* APIController.swift */; };
+		90F4427B19FEB6700047A86D /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4427A19FEB6700047A86D /* Hmac.swift */; };
+		90F4429A1A0021C10047A86D /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F442991A0021C10047A86D /* DownloadViewController.swift */; };
 		90F93DE219FD1DAF0028DCF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */; };
 		90F93DE419FD1DAF0028DCF4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */; };
 		90F93DE719FD1DAF0028DCF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DE519FD1DAF0028DCF4 /* Main.storyboard */; };
 		90F93DE919FD1DAF0028DCF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DE819FD1DAF0028DCF4 /* Images.xcassets */; };
 		90F93DEC19FD1DAF0028DCF4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F93DEA19FD1DAF0028DCF4 /* LaunchScreen.xib */; };
 		90F93DF819FD1DAF0028DCF4 /* FreeboxClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DF719FD1DAF0028DCF4 /* FreeboxClientTests.swift */; };
-		90F93E0219FD1DE30028DCF4 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93E0119FD1DE30028DCF4 /* APIController.swift */; };
+		90F93E0219FD1DE30028DCF4 /* APILoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93E0119FD1DE30028DCF4 /* APILoginController.swift */; };
 		90F93E0419FD4D310028DCF4 /* Freebox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93E0319FD4D310028DCF4 /* Freebox.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		902065391A08093600A2A226 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		9020653B1A080A6800A2A226 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		90F4427719FEB5AE0047A86D /* FreeboxClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreeboxClient-Bridging-Header.h"; sourceTree = "<group>"; };
+		90F4427A19FEB6700047A86D /* Hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hmac.swift; path = ../Hmac.swift; sourceTree = "<group>"; };
+		90F442991A0021C10047A86D /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		90F93DDC19FD1DAE0028DCF4 /* FreeboxClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeboxClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F93DE019FD1DAF0028DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +47,7 @@
 		90F93DF119FD1DAF0028DCF4 /* FreeboxClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreeboxClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90F93DF619FD1DAF0028DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F93DF719FD1DAF0028DCF4 /* FreeboxClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeboxClientTests.swift; sourceTree = "<group>"; };
-		90F93E0119FD1DE30028DCF4 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		90F93E0119FD1DE30028DCF4 /* APILoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILoginController.swift; sourceTree = "<group>"; };
 		90F93E0319FD4D310028DCF4 /* Freebox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Freebox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +75,7 @@
 				90F93DDE19FD1DAE0028DCF4 /* FreeboxClient */,
 				90F93DF419FD1DAF0028DCF4 /* FreeboxClientTests */,
 				90F93DDD19FD1DAE0028DCF4 /* Products */,
+				90F4427719FEB5AE0047A86D /* FreeboxClient-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,9 +92,13 @@
 			isa = PBXGroup;
 			children = (
 				90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */,
-				90F93E0119FD1DE30028DCF4 /* APIController.swift */,
-				90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */,
+				90F93E0119FD1DE30028DCF4 /* APILoginController.swift */,
 				90F93E0319FD4D310028DCF4 /* Freebox.swift */,
+				90F93DE319FD1DAF0028DCF4 /* WelcomeViewController.swift */,
+				9020653B1A080A6800A2A226 /* APIController.swift */,
+				902065391A08093600A2A226 /* Download.swift */,
+				90F442991A0021C10047A86D /* DownloadViewController.swift */,
+				90F4427A19FEB6700047A86D /* Hmac.swift */,
 				90F93DE519FD1DAF0028DCF4 /* Main.storyboard */,
 				90F93DE819FD1DAF0028DCF4 /* Images.xcassets */,
 				90F93DEA19FD1DAF0028DCF4 /* LaunchScreen.xib */,
@@ -218,9 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F4427B19FEB6700047A86D /* Hmac.swift in Sources */,
 				90F93DE419FD1DAF0028DCF4 /* WelcomeViewController.swift in Sources */,
 				90F93DE219FD1DAF0028DCF4 /* AppDelegate.swift in Sources */,
-				90F93E0219FD1DE30028DCF4 /* APIController.swift in Sources */,
+				90F93E0219FD1DE30028DCF4 /* APILoginController.swift in Sources */,
+				9020653C1A080A6800A2A226 /* APIController.swift in Sources */,
+				90F4429A1A0021C10047A86D /* DownloadViewController.swift in Sources */,
+				9020653A1A08093600A2A226 /* Download.swift in Sources */,
 				90F93E0419FD4D310028DCF4 /* Freebox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,9 +362,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FreeboxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FreeboxClient-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -354,9 +375,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FreeboxClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FreeboxClient-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -413,6 +436,7 @@
 				90F93DFD19FD1DAF0028DCF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		90F93DFE19FD1DAF0028DCF4 /* Build configuration list for PBXNativeTarget "FreeboxClientTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +445,7 @@
 				90F93E0019FD1DAF0028DCF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

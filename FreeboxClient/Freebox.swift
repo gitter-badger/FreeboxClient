@@ -9,8 +9,10 @@
 import Foundation
 
 class Freebox {
-    var name: String = "Freebox Server"
+    var name: String
     var app_token: String
+    var remote_ip: String?
+    var remote_port: String?
     
     init(name: String, token: String) {
         self.name = name
@@ -23,12 +25,27 @@ class Freebox {
             let n = freebox["name"]
             let t = freebox["token"]
             let f: Freebox = Freebox(name: n!, token: t!)
+            if let rip = freebox["remote_ip"] as String? {
+                f.remote_ip = rip
+            }
+            if let rport = freebox["remote_port"] as String? {
+                f.remote_port = rport
+            }
             freeboxes += [f]
         }
         return freeboxes
     }
     
     func toDictionnary() -> Dictionary<String,String> {
-        return ["name":name, "token":app_token]
+        var dict = Dictionary<String,String>()
+        dict["name"] = name
+        dict["token"] = app_token
+        if let rip = remote_ip {
+            dict["remote_ip"] = rip
+        }
+        if let rport = remote_port {
+            dict["remote_port"] = rport
+        }
+        return dict
     }
 }
