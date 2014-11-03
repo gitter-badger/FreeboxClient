@@ -29,20 +29,27 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("downloadIdentifier") as UITableViewCell
-        let dl = downloads[indexPath.row]
-        cell.textLabel.text = dl.name
-        if let dirData = NSData(base64EncodedString: dl.dir, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters) {
-            cell.detailTextLabel?.text = NSString(data: dirData, encoding: NSUTF8StringEncoding)
+        var cell = tableView.dequeueReusableCellWithIdentifier("DownloadCell") as? DownloadCell
+        if cell == nil {
+            tableView.registerNib(UINib(nibName:"DownloadCell", bundle: nil), forCellReuseIdentifier: "DownloadCell")
+            cell = tableView.dequeueReusableCellWithIdentifier("DownloadCell") as? DownloadCell
         }
-        return cell
+        let dl = downloads[indexPath.row]
+        cell!.name.text = dl.name
+        cell!.dlSize.text = String(dl.size)
+        cell!.percentage.text = "100%"
+        cell!.tx.text = "up:10Ko/down:6Mo"
+        cell!.state.image = UIImage(named: "Blank52")
+//        if let dirData = NSData(base64EncodedString: dl.dir, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters) {
+//            cell.detailTextLabel?.text = NSString(data: dirData, encoding: NSUTF8StringEncoding)
+//        }
+        return cell!
     }
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        let dl = downloads[indexPath.row]
-//        println(dl.dir)
-//    }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70
+    }
+        
     func didReceiveAPIResults(jsonResults: NSDictionary, id_cmd: Int) {
         switch id_cmd {
         case 0:
