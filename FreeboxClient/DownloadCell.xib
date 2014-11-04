@@ -6,53 +6,85 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="hiv-Nu-SpO" customClass="DownloadCell" customModule="FreeboxClient" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="156" id="ee7-fR-ZRB" customClass="DownloadCell" customModule="FreeboxClient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hiv-Nu-SpO" id="5Vn-XE-1qY">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ee7-fR-ZRB" id="HJT-No-BeF">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DL/Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-HA-pBP">
-                        <rect key="frame" x="50" y="39" width="109" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-jq-PRg">
-                        <rect key="frame" x="50" y="10" width="262" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1M-uH-GqW">
-                        <rect key="frame" x="167" y="39" width="37" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UP/DOWN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmd-4i-vzc">
-                        <rect key="frame" x="212" y="39" width="100" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="D0i-2V-Pal">
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Ca-cA-InZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="2"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="0o0-rG-1Ra"/>
+                        </constraints>
                     </progressView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZwA-iv-hwq">
-                        <rect key="frame" x="0.0" y="11" width="42" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cbo-5x-1iF">
+                        <rect key="frame" x="8" y="13" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="Nh5-n9-HN1"/>
+                            <constraint firstAttribute="width" constant="40" id="O15-zQ-25Z"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wm3-CF-WYf">
+                        <rect key="frame" x="56" y="8" width="256" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no6-jX-clk">
+                        <rect key="frame" x="56" y="37" width="96" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eII-Nw-RmR">
+                        <rect key="frame" x="216" y="37" width="96" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yan-9c-0nw">
+                        <rect key="frame" x="160" y="37" width="48" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="peY-U9-Z3M"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="no6-jX-clk" firstAttribute="top" secondItem="wm3-CF-WYf" secondAttribute="bottom" constant="8" id="0Bl-qN-eCZ"/>
+                    <constraint firstItem="wm3-CF-WYf" firstAttribute="top" secondItem="HJT-No-BeF" secondAttribute="top" constant="8" id="25v-zL-dJY"/>
+                    <constraint firstAttribute="trailing" secondItem="eII-Nw-RmR" secondAttribute="trailing" constant="8" id="7au-fq-ETu"/>
+                    <constraint firstItem="yan-9c-0nw" firstAttribute="top" secondItem="wm3-CF-WYf" secondAttribute="bottom" constant="8" id="7lN-ph-ZVh"/>
+                    <constraint firstItem="wm3-CF-WYf" firstAttribute="height" secondItem="no6-jX-clk" secondAttribute="height" id="8ww-3u-ruD"/>
+                    <constraint firstItem="eII-Nw-RmR" firstAttribute="leading" secondItem="yan-9c-0nw" secondAttribute="trailing" constant="8" id="A2h-0e-bIA"/>
+                    <constraint firstItem="eII-Nw-RmR" firstAttribute="top" secondItem="wm3-CF-WYf" secondAttribute="bottom" constant="8" id="B0o-ly-6Nn"/>
+                    <constraint firstItem="wm3-CF-WYf" firstAttribute="height" secondItem="yan-9c-0nw" secondAttribute="height" id="Gew-sq-3cm"/>
+                    <constraint firstItem="wm3-CF-WYf" firstAttribute="leading" secondItem="Cbo-5x-1iF" secondAttribute="trailing" constant="8" id="J8o-CL-WjW"/>
+                    <constraint firstItem="yan-9c-0nw" firstAttribute="leading" secondItem="no6-jX-clk" secondAttribute="trailing" constant="8" id="L0i-cI-XnC"/>
+                    <constraint firstItem="no6-jX-clk" firstAttribute="height" secondItem="wm3-CF-WYf" secondAttribute="height" id="UUI-Rp-x0B"/>
+                    <constraint firstAttribute="trailing" secondItem="4Ca-cA-InZ" secondAttribute="trailing" id="Yuy-Uv-acB"/>
+                    <constraint firstItem="no6-jX-clk" firstAttribute="leading" secondItem="Cbo-5x-1iF" secondAttribute="trailing" constant="8" id="bqC-o7-mIR"/>
+                    <constraint firstItem="wm3-CF-WYf" firstAttribute="height" secondItem="eII-Nw-RmR" secondAttribute="height" id="djt-0g-UEv"/>
+                    <constraint firstItem="Cbo-5x-1iF" firstAttribute="leading" secondItem="HJT-No-BeF" secondAttribute="leading" constant="8" id="kUS-N8-tQO"/>
+                    <constraint firstItem="no6-jX-clk" firstAttribute="width" secondItem="eII-Nw-RmR" secondAttribute="width" id="o4k-LR-nqt"/>
+                    <constraint firstItem="4Ca-cA-InZ" firstAttribute="top" secondItem="HJT-No-BeF" secondAttribute="top" id="p9W-s0-Hky"/>
+                    <constraint firstAttribute="trailing" secondItem="wm3-CF-WYf" secondAttribute="trailing" constant="8" id="pFR-TE-KGM"/>
+                    <constraint firstAttribute="centerY" secondItem="Cbo-5x-1iF" secondAttribute="centerY" id="ugd-5i-Ynb"/>
+                    <constraint firstItem="4Ca-cA-InZ" firstAttribute="leading" secondItem="HJT-No-BeF" secondAttribute="leading" id="zjL-Nt-7Ac"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="dlSize" destination="RFr-HA-pBP" id="5LK-B4-iLc"/>
-                <outlet property="name" destination="PHD-jq-PRg" id="aGQ-hy-FcB"/>
-                <outlet property="percentage" destination="J1M-uH-GqW" id="oE7-UY-HNX"/>
-                <outlet property="progress" destination="D0i-2V-Pal" id="dCX-XP-ezW"/>
-                <outlet property="state" destination="ZwA-iv-hwq" id="CqJ-St-Ex6"/>
-                <outlet property="tx" destination="Rmd-4i-vzc" id="IKg-tj-hhc"/>
+                <outlet property="name" destination="wm3-CF-WYf" id="dpL-ZN-Nwd"/>
+                <outlet property="pct" destination="yan-9c-0nw" id="B4I-39-XvK"/>
+                <outlet property="progress" destination="4Ca-cA-InZ" id="rgm-DN-0t9"/>
+                <outlet property="size" destination="no6-jX-clk" id="nSN-P9-wrS"/>
+                <outlet property="state" destination="Cbo-5x-1iF" id="En7-TO-Zf1"/>
+                <outlet property="upDown" destination="eII-Nw-RmR" id="S9v-3S-Rhs"/>
             </connections>
-            <point key="canvasLocation" x="651" y="197"/>
+            <point key="canvasLocation" x="758" y="235"/>
         </tableViewCell>
     </objects>
 </document>

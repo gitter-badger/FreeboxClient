@@ -167,7 +167,14 @@ class WelcomeViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var downloadVC = segue.destinationViewController as DownloadViewController
-        downloadVC.free = freeboxes[currentFreebox!]
+        if let tmp = currentFreebox {
+            if tmp == -1 {
+                downloadVC.free = freeboxes.last!
+            }
+            else {
+                downloadVC.free = freeboxes[tmp]
+            }
+        }
         downloadVC.sessionToken = self.sessionToken!
     }
 

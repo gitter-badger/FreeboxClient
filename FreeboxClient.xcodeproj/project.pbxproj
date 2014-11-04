@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		9020653A1A08093600A2A226 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902065391A08093600A2A226 /* Download.swift */; };
 		9020653C1A080A6800A2A226 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9020653B1A080A6800A2A226 /* APIController.swift */; };
-		9020653E1A0825C500A2A226 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9020653D1A0825C500A2A226 /* DownloadCell.xib */; };
-		902065401A082AEB00A2A226 /* DownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9020653F1A082AEB00A2A226 /* DownloadCell.swift */; };
 		902065421A082CF400A2A226 /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = 902065411A082CF400A2A226 /* Blank52.png */; };
+		902065441A09453700A2A226 /* DownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902065431A09453700A2A226 /* DownloadCell.swift */; };
+		902065461A09458800A2A226 /* DownloadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 902065451A09458800A2A226 /* DownloadCell.xib */; };
 		90F4427B19FEB6700047A86D /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F4427A19FEB6700047A86D /* Hmac.swift */; };
 		90F4429A1A0021C10047A86D /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F442991A0021C10047A86D /* DownloadViewController.swift */; };
 		90F93DE219FD1DAF0028DCF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F93DE119FD1DAF0028DCF4 /* AppDelegate.swift */; };
@@ -37,9 +37,9 @@
 /* Begin PBXFileReference section */
 		902065391A08093600A2A226 /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
 		9020653B1A080A6800A2A226 /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
-		9020653D1A0825C500A2A226 /* DownloadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadCell.xib; sourceTree = "<group>"; };
-		9020653F1A082AEB00A2A226 /* DownloadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadCell.swift; sourceTree = "<group>"; };
 		902065411A082CF400A2A226 /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
+		902065431A09453700A2A226 /* DownloadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadCell.swift; sourceTree = "<group>"; };
+		902065451A09458800A2A226 /* DownloadCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadCell.xib; sourceTree = "<group>"; };
 		90F4427719FEB5AE0047A86D /* FreeboxClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreeboxClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		90F4427A19FEB6700047A86D /* Hmac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hmac.swift; path = ../Hmac.swift; sourceTree = "<group>"; };
 		90F442991A0021C10047A86D /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				9020653B1A080A6800A2A226 /* APIController.swift */,
 				902065391A08093600A2A226 /* Download.swift */,
 				90F442991A0021C10047A86D /* DownloadViewController.swift */,
-				9020653F1A082AEB00A2A226 /* DownloadCell.swift */,
-				9020653D1A0825C500A2A226 /* DownloadCell.xib */,
+				902065431A09453700A2A226 /* DownloadCell.swift */,
+				902065451A09458800A2A226 /* DownloadCell.xib */,
 				90F4427A19FEB6700047A86D /* Hmac.swift */,
 				90F93DE519FD1DAF0028DCF4 /* Main.storyboard */,
 				90F93DE819FD1DAF0028DCF4 /* Images.xcassets */,
@@ -222,8 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F93DE719FD1DAF0028DCF4 /* Main.storyboard in Resources */,
-				9020653E1A0825C500A2A226 /* DownloadCell.xib in Resources */,
 				902065421A082CF400A2A226 /* Blank52.png in Resources */,
+				902065461A09458800A2A226 /* DownloadCell.xib in Resources */,
 				90F93DEC19FD1DAF0028DCF4 /* LaunchScreen.xib in Resources */,
 				90F93DE919FD1DAF0028DCF4 /* Images.xcassets in Resources */,
 			);
@@ -251,7 +251,7 @@
 				90F4429A1A0021C10047A86D /* DownloadViewController.swift in Sources */,
 				9020653A1A08093600A2A226 /* Download.swift in Sources */,
 				90F93E0419FD4D310028DCF4 /* Freebox.swift in Sources */,
-				902065401A082AEB00A2A226 /* DownloadCell.swift in Sources */,
+				902065441A09453700A2A226 /* DownloadCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
