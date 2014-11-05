@@ -20,7 +20,6 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("test")
         api = APIController(token: self.sessionToken!, delegate: self)
         api.downloads()
         var nib = UINib(nibName: "DownloadCell", bundle: nil)
@@ -45,6 +44,7 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dl = downloads[indexPath.row]
+        performSegueWithIdentifier("toDetailView", sender: self)
     }
     
     func didReceiveAPIResults(jsonResults: NSDictionary, id_cmd: Int) {
@@ -61,9 +61,9 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
 
     }
     
-    //        if let dirData = NSData(base64EncodedString: dl.dir, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters) {
-    //            cell.detailTextLabel?.text = NSString(data: dirData, encoding: NSUTF8StringEncoding)
-    //        }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var detailVC = segue.destinationViewController as DetailDownloadViewController
+        detailVC.dl = downloads[downloadTableView.indexPathForSelectedRow()!.row]
+    }
 
 }
