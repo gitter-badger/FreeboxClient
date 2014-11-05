@@ -20,6 +20,7 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("test")
         api = APIController(token: self.sessionToken!, delegate: self)
         api.downloads()
         var nib = UINib(nibName: "DownloadCell", bundle: nil)
@@ -32,22 +33,8 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = downloadTableView.dequeueReusableCellWithIdentifier("downloadCell") as DownloadCell
-        
-//        var cell = tableView.dequeueReusableCellWithIdentifier("DownloadCell") as? DownloadCell
-//        if cell == nil {
-//            tableView.registerNib(UINib(nibName:"DownloadCell", bundle: nil), forCellReuseIdentifier: "DownloadCell")
-//            cell = tableView.dequeueReusableCellWithIdentifier("DownloadCell") as? DownloadCell
-//        }
         let dl = downloads[indexPath.row]
-        cell.initItem(name: dl.name, size: String(dl.size))
-//        cell!.name.text = dl.name
-//        cell!.dlSize.text = String(dl.size)
-//        cell!.percentage.text = "100%"
-//        cell!.tx.text = "up:10Ko/down:6Mo"
-//        cell!.state.image = UIImage(named: "Blank52")
-////        if let dirData = NSData(base64EncodedString: dl.dir, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters) {
-//            cell.detailTextLabel?.text = NSString(data: dirData, encoding: NSUTF8StringEncoding)
-//        }
+        cell.initDownload(dl)
         return cell
     }
     
@@ -56,6 +43,9 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
         return 66
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let dl = downloads[indexPath.row]
+    }
     
     func didReceiveAPIResults(jsonResults: NSDictionary, id_cmd: Int) {
         switch id_cmd {
@@ -70,5 +60,10 @@ class DownloadViewController: UIViewController, UITableViewDataSource, UITableVi
         }
 
     }
+    
+    //        if let dirData = NSData(base64EncodedString: dl.dir, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters) {
+    //            cell.detailTextLabel?.text = NSString(data: dirData, encoding: NSUTF8StringEncoding)
+    //        }
+
 
 }
